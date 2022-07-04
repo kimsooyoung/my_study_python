@@ -26,13 +26,13 @@ class Car(object):
     def __repr__(self):
         return 'repr : {} - {}'.format(self._company, self._details)
 
-    # Instance Method
+    # Instance Method (일반 메소드들)
     # self : 객체의 고유한 속성 값 사용
     def detail_info(self):
         print('Current Id : {}'.format(id(self)))
         print('Car Detail Info : {} {}'.format(self._company, self._details.get('price')))
         
-    # Instance Method
+    # Instance Method - Getter
     def get_price(self):
         return 'Before Car Price -> company : {}, price : {}'.format(self._company, self._details.get('price'))
 
@@ -41,6 +41,7 @@ class Car(object):
         return 'After Car Price -> company : {}, price : {}'.format(self._company, self._details.get('price') * Car.price_per_raise)
 
     # Class Method
+    # @로 시작하며 첫번째 인자로 클래스를 받는다. 현재를 cls가 Car일 것임  
     @classmethod
     def raise_price(cls, per):
         if per <= 1:
